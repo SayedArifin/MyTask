@@ -1,4 +1,5 @@
 :root {
+  --transparent: #eee3ff00;
   --c1: #fee3ff;
   --c2: #ffe947;
   --c3: #fb20ff;
@@ -8,6 +9,18 @@
   --c7: #fde542;
   --c8: #fff787;
   --c9: #3e00ed;
+  --c10: #fff;
+  --c11: #c3c3c3;
+  --c12: #c69c14;
+  --c13: #ffea1d;
+  --c14: #0920e9;
+  --c15: #4ba9ff;
+  --c16: #fa00ff;
+  --c17: #fd88ff;
+  --c18: #9ed1ff;
+  --c19: #ff00f5;
+  --c20: #ff00f748;
+  --c21: #7000ff;
 }
 
 @font-face {
@@ -16,6 +29,11 @@
 }
 * {
   font-family: "Saira-Bold", sans-serif;
+}
+body {
+  background-color: #000000;
+  background-image: url("./assets/futuristic-casino-architecture 1.png");
+  background-repeat: no-repeat;
 }
 
 .navbar {
@@ -28,9 +46,9 @@
   align-items: center;
   background-image: linear-gradient(
     to bottom,
-    var(--c4) 20%,
+    var(--c4) 0%,
     var(--c5) 50%,
-    var(--c4) 85%
+    var(--c4) 100%
   );
   z-index: 99;
 }
@@ -69,7 +87,6 @@ a {
 }
 
 .main__container {
-  background-image: linear-gradient(to bottom, var(--c6) 0%, var(--c4) 25%);
   padding-top: 150px;
   min-height: 100vh;
   min-height: 100dvh;
@@ -150,7 +167,11 @@ a {
   justify-content: center;
 }
 .jackpot {
+  display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 .hero__1--cashback {
   display: flex;
@@ -164,17 +185,335 @@ a {
   margin-left: -40px;
 }
 
-.hero_2 {
-  flex: 1;
+.hero_1 {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
 }
 
-.hero_1 {
-  flex: 2.5;
-  width: 100%;
+.hero_2 {
+  min-width: 350px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .login__button {
   width: 100%;
   display: flex;
   gap: 5px;
+}
+
+.login {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 15px;
+  margin: 15px;
+}
+
+.login__input {
+  border: 2px solid var(--c10);
+  height: 50px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--c11) 10%,
+    var(--c10) 38%,
+    var(--c10) 61%,
+    var(--c11) 88%
+  );
+}
+
+.btn {
+  flex: 1;
+  height: 50px;
+  background-image: linear-gradient(to bottom, var(--c12) 0%, var(--c13) 100%);
+  border: 2px solid var(--c2);
+  color: var(--c4);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  background-image: linear-gradient(to bottom, var(--c10) 0%, var(--c13) 100%);
+}
+
+.branding {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.branding_text {
+  color: var(--c10);
+}
+.branding__button {
+  height: 50px;
+  background-image: linear-gradient(to bottom, var(--c14) 0%, var(--c15) 100%);
+  cursor: pointer;
+  color: var(--c10);
+  transition: transform 0.3s ease;
+}
+.branding__button:hover {
+  background-image: linear-gradient(to bottom, var(--c15) 0%, var(--c14) 100%);
+}
+.social_butttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.social_button {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.social_button:hover {
+  transform: scale(1.1);
+}
+.cashback-carousel {
+  overflow: hidden;
+}
+
+.cashback-item {
+  display: none;
+}
+
+.cashback-item.active {
+  display: block;
+}
+
+.dice_img {
+  width: 304px;
+  height: 176px;
+}
+
+.jackpot__number {
+  color: var(--c2);
+  padding: 0 20px;
+  font-size: 50px;
+  margin: 5px 0;
+
+  border: 2px solid var(--c18);
+  background-image: linear-gradient(
+    to bottom,
+    #000f99 0%,
+    #1d33ff 31%,
+    #3448ff 52%,
+    #000f99 100%
+  );
+}
+.jactpot_start {
+  border-radius: 20px 0 0 20px;
+}
+.jactpot_end {
+  border-radius: 0 20px 20px 0;
+}
+
+.jackbox__number__inner-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 30px;
+  width: 100%;
+  border: 7px solid var(--c2);
+  margin: 10px 0 10px 0;
+  box-shadow: 0 4px 40px var(--c4);
+}
+
+/* .jackbox__number__outer-container {
+  border: 2px solid var(--c18);
+} */
+
+.jackpot__number {
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.jackpot__number.show {
+  opacity: 1;
+}
+
+.jackbox__text {
+  margin-top: -62px;
+  width: 627px;
+  height: 203px;
+}
+
+.game_game__card__heading {
+  color: var(--c16);
+  display: flex;
+  justify-content: center;
+  font-size: 55px;
+  -webkit-text-stroke: 2px var(--c10);
+  text-stroke: 2px var(--c10);
+  text-shadow: 0 8px 40px var(--c16);
+  letter-spacing: -2px;
+}
+
+.game_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.game__card {
+  display: flex;
+  flex: 0 1 calc(20% - 20px);
+  flex-direction: column;
+  gap: 15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+  .game__card {
+    flex: 0 1 calc(25% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .game__card {
+    flex: 0 1 calc(100% - 20px);
+  }
+}
+
+.card {
+  background-color: var(--c20);
+  border: 2px solid var(--c19);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__image {
+  width: 184px;
+  height: 143px;
+  margin: 20 0px;
+}
+.card_button {
+  height: 46px;
+  background-color: var(--c20);
+  border: 2px solid var(--c19);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  align-items: center;
+  color: #ffdef8;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.card_button:hover {
+  transform: scale(1.1);
+}
+
+.bank_support_section {
+  display: flex;
+  flex-direction: column;
+  max-width: 970px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.bank__support__heading {
+  color: var(--c21);
+  display: flex;
+  justify-content: center;
+  font-size: 55px;
+  -webkit-text-stroke: 2px var(--c10);
+  text-stroke: 2px var(--c21);
+  text-shadow: 0 8px 40px var(--c16);
+  letter-spacing: -2px;
+}
+
+.support__description {
+  color: var(--c10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.card_img {
+  position: absolute;
+  left: 0;
+  width: 230px;
+  height: 250px;
+}
+.tables {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+.table {
+  color: #00fff0;
+  flex: 1;
+}
+
+.table__section {
+  display: flex;
+  flex: 1;
+  border: 2px dotted var(--c1);
+}
+.tables {
+  display: flex;
+  max-width: 970px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+th {
+  color: var(--c1);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+tr {
+  color: var(--c1);
+  display: flex;
+}
+.table__section {
+  border: 10px dotted var(--c16);
+  margin-bottom: 200px;
+}
+.table__row {
+  display: flex;
+  justify-content: center;
+  border: 3px solid var(--c16);
+  margin: 4px;
+  width: 450px;
+}
+.table_data {
+  flex: 1;
+  font-size: 25px;
+  font-weight: 700;
+}
+.table_heading {
+  font-size: 40px;
+  -webkit-text-stroke: 2px var(--c10);
+  text-stroke: 2px var(--c10);
+  color: var(--c16);
+  text-shadow: 0 8px 40px var(--c16);
+  letter-spacing: -2px;
+}
+
+.money {
+  color: #ffe317;
 }
