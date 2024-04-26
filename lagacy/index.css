@@ -287,7 +287,8 @@ a {
 }
 
 .cashback-item.active {
-  display: block;
+  display: flex;
+  gap: 20px;
 }
 
 .dice_img {
@@ -428,6 +429,8 @@ a {
 }
 
 .bank__support__heading {
+  background-image: url("./assets/bank support heading.svg");
+  background-size: contain;
   color: var(--c21);
   display: flex;
   justify-content: center;
