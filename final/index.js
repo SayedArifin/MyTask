@@ -46,7 +46,6 @@ function startJackpot() {
   }, 200);
 }
 
-// Call the startJackpot function after 3 seconds of page load
 window.onload = function () {
   setTimeout(startJackpot, 3000); // 3000 milliseconds = 3 seconds
 };
@@ -66,10 +65,9 @@ function nextSlide() {
   showSlide(currentSlide + 1);
 }
 
-showSlide(0); // Show the first slide initially
+showSlide(0);
 setInterval(nextSlide, 3000);
 
-// Define the startJackpot function
 function startJackpot() {
   const slots = document.querySelectorAll(".slot");
   let count = 0;
@@ -93,17 +91,15 @@ function startJackpot() {
   }, 200);
 }
 
-// Function to show toast message
 function showToast(message) {
   const toast = document.getElementById("toast");
   toast.textContent = message;
   toast.style.display = "block";
   setTimeout(() => {
     toast.style.display = "none";
-  }, 3000); // Hide the toast after 3 seconds
+  }, 3000);
 }
 
-// Call the startJackpot function after 3 seconds of page load
 window.onload = function () {
   setTimeout(startJackpot, 3000); // 3000 milliseconds = 3 seconds
 };
@@ -114,10 +110,9 @@ function showToast(message) {
   toast.style.display = "block";
   setTimeout(() => {
     toast.style.display = "none";
-  }, 3000); // Hide the toast after 3 seconds
+  }, 3000);
 }
 
-// Call the startJackpot function after 3 seconds of page load
 window.onload = function () {
   setTimeout(startJackpot, 3000); // 3000 milliseconds = 3 seconds
 };

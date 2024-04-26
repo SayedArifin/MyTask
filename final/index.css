@@ -307,6 +307,10 @@ body {
   left: 0;
   right: 0;
 }
+td {
+  text-align: center;
+}
+
 #navbar-toggle[aria-expanded="true"] + #navbar-menu {
   background-color: var(--c4);
   opacity: 1;
@@ -359,8 +363,38 @@ body {
   padding-top: 200px;
   padding-bottom: 50px;
 }
+.mobile_marketting {
+  display: none;
+}
 
 @media screen and (max-width: 700px) {
+  .mobile_marketting {
+    display: block;
+    color: var(--c1);
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    padding-bottom: 80px;
+  }
+  .game_game__card__heading {
+    padding-top: 100px;
+  }
+  .cashback-item {
+    flex-direction: column;
+  }
+  .slot {
+    font-size: 40px;
+    margin-left: -15px;
+    margin-top: 87px;
+  }
+  .jackpot_button {
+    margin-left: -50px;
+    margin-top: 20px;
+  }
+  .hero {
+    flex-direction: column-reverse;
+  }
   .tables {
     flex-direction: column;
   }
