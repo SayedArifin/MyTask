@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MIYA QQ</title>
     <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <header id="navbar">
@@ -62,69 +67,23 @@
         </div>
         <div class="hero">
           <div class="left__container">
-            <div class="cashback-carousel slideshow-container">
-              <div class="slide">
-                <div class="cashback-item">
-                  <div class="hero__1--cashback">
-                    <p class="cashback_number">5%</p>
-                    <button class="cashback_button">CASHBACK BONUS</button>
+            <section>
+               <div class="swiper">
+             <div class="swiper-wrapper">
+
+                  <div class="swiper-slide">
+                    <img class="img" src="./assets/cashback image.png" alt="">
                   </div>
-                  <div class="hero__1--cashback mobile_hidden">
-                    <p class="cashback_number">10%</p>
-                    <button class="cashback_button">REFERRAL BONUS</button>
+                  <div class="swiper-slide">
+                    <img class="img" src="./assets/cashback image.png" alt="">
                   </div>
-                </div>
-              </div>
-              <div class="slide mobile_hidden">
-                <div class="cashback-item">
-                  <div class="hero__1--cashback mobile_hidden">
-                    <p class="cashback_number">5%</p>
-                    <button class="cashback_button">CASHBACK<br />BONUS</button>
+                    </div>
                   </div>
-                  <div class="hero__1--cashback">
-                    <p class="cashback_number">10%</p>
-                    <button class="cashback_button">REFERRAL<br />BONUS</button>
+                  <div class="jackpot_counter">
+                    <img class="img" src="./assets/Group 72.png" alt="">
+                    <div class="counter" id="counter">00000000</div>
                   </div>
-                </div>
-              </div>
-              <div class="slide">
-                <div class="cashback-item">
-                  <div class="hero__1--cashback">
-                    <p class="cashback_number">5%</p>
-                    <button class="cashback_button">CASHBACK<br />BONUS</button>
-                  </div>
-                  <div class="hero__1--cashback">
-                    <p class="cashback_number">10%</p>
-                    <button class="cashback_button">REFERRAL<br />BONUS</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="jackpot">
-              <img
-                src="./assets/jackpot_banner.svg"
-                class="jackpot_banner"
-                alt="jackpot banner"
-              />
-              <div class="jactpot_text">
-                <p class="slot">0</p>
-                <p class="slot">0</p>
-                <p class="slot">0</p>
-                <p class="slot">0</p>
-                <p class="slot">0</p>
-                <p class="slot">0</p>
-                <p class="slot">0</p>
-                <p class="slot">0</p>
-              </div>
-              <button onclick="startJackpot()" class="jackpot_button">
-                <img
-                  class="jackbox__text"
-                  src="./assets/jackpot text.png"
-                  alt=""
-                />
-              </button>
-              <div id="toast" class="toast"></div>
-            </div>
+                </section>
           </div>
           <div class="right_container">
             <form class="login" action="">
@@ -159,7 +118,7 @@
                   <img src="assets/6.svg" alt="msg" />
                 </button>
               </div>
-              <img class="dice_img" src="./assets/dice.svg" alt="" />
+             <div class="dice__container"> <img class="dice_img" src="./assets/dice.svg" alt="" /></div>
             </form>
           </div>
         </div>
@@ -394,7 +353,10 @@
           </div>
         </div>
       </section>
+      
+      </section>
     </main>
     <script src="./index.js"></script>
+    
   </body>
 </html>

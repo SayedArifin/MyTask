@@ -23,32 +23,54 @@ headlines.forEach(function (headline) {
   });
 });
 
-function startJackpot() {
-  const slots = document.querySelectorAll(".slot");
-  let count = 0;
-  const interval = setInterval(() => {
-    const numbers = [];
-    slots.forEach((slot) => {
-      const randomNumber = Math.floor(Math.random() * 9) + 1;
-      slot.textContent = randomNumber;
-      numbers.push(randomNumber);
-    });
-    if (count === 10) {
-      clearInterval(interval);
-      const isJackpot = numbers.every((num) => num === numbers[0]);
-      if (isJackpot) {
-        alert("Congratulations! It Seems You Are Lucky Today!");
-      } else {
-        alert("Better luck next time!");
-      }
+const swiper = new Swiper(".swiper", {
+  // Optional parameters
+  direction: "horizontal",
+  loop: true,
+
+  // Autoplay
+  autoplay: {
+    delay: 3000, // Change delay as needed (in milliseconds)
+    disableOnInteraction: false, // Prevent autoplay from stopping on user interaction
+  },
+
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+});
+
+function animateCounter(element, start, end, duration) {
+  let range = end - start;
+  let current = start;
+  let increment = end > start ? 1 : -1;
+
+  function updateCounter() {
+    current += increment;
+    element.textContent = current.toString().padStart(8, "0");
+
+    if ((increment > 0 && current < end) || (increment < 0 && current > end)) {
+      setTimeout(updateCounter, 100); // Delay for each count (1 second)
     }
-    count++;
-  }, 200);
+  }
+
+  updateCounter();
 }
 
-window.onload = function () {
-  setTimeout(startJackpot, 3000); // 3000 milliseconds = 3 seconds
-};
+// Usage
+let counterElement = document.getElementById("counter");
+animateCounter(counterElement, 13482649, 99999999, 5000);
 
 let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
@@ -67,29 +89,6 @@ function nextSlide() {
 
 showSlide(0);
 setInterval(nextSlide, 3000);
-
-function startJackpot() {
-  const slots = document.querySelectorAll(".slot");
-  let count = 0;
-  const interval = setInterval(() => {
-    const numbers = [];
-    slots.forEach((slot) => {
-      const randomNumber = Math.floor(Math.random() * 9) + 1;
-      slot.textContent = randomNumber;
-      numbers.push(randomNumber);
-    });
-    if (count === 10) {
-      clearInterval(interval);
-      const isJackpot = numbers.every((num) => num === numbers[0]);
-      if (isJackpot) {
-        showToast("Congratulations! It Seems You Are Lucky Today!");
-      } else {
-        showToast("Better luck next time!");
-      }
-    }
-    count++;
-  }, 200);
-}
 
 function showToast(message) {
   const toast = document.getElementById("toast");
