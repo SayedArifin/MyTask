@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MIYA QQ</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="animate.css">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -66,7 +67,7 @@
           </div>
         </div>
         <div class="hero">
-          <div class="left__container">
+          <div class="left__container wow fadeInLeft">
             <section>
                <div class="swiper">
              <div class="swiper-wrapper">
@@ -85,7 +86,7 @@
                   </div>
                 </section>
           </div>
-          <div class="right_container">
+          <div class="right_container wow fadeInRight">
             <form class="login" action="">
               <input class="login__input" type="text" placeholder="Username" />
               <input
@@ -127,16 +128,16 @@
         <div class="game_game__card_container">
           <div class="heading">
             <img
-              src="./assets/border heading.svg"
+              src="./assets/heading.png"
               alt=""
-              class="mobile_hidden"
+              class="border__heading mobile_hidden"
             />
             <h1 class="game_game__card__heading">
               10 PERMAINAN PKV GAMES TERLENGKAP
             </h1>
           </div>
 
-          <div class="game_cards">
+          <div class="game_cards  wow bounceInUp">
             <div class="game__card">
               <div class="card">
                 <img
@@ -268,7 +269,7 @@
               <h1 class="bank__support__heading">BANK SUPPORT</h1>
             </div>
 
-            <p class="support__description">
+            <p class="support__description wow bounceInUp">
               AhliQQ memberikan anda kemudahan dalam melakukan transaksi deposit
               dan withdraw. Kami menyediakan bank BCA, bank BNI, bank BRI, bank
               MANDIRI, bank DANAMON, dan bank CIMB NIAGA. Namun, jangan khawatir
@@ -285,8 +286,8 @@
               alt="cards"
             />
           </div>
-          <div class="tables">
-            <div class="table">
+          <div class="tables wow bounceInUp">
+            <div class="table ">
               <table class="table__section">
                 <tr class="table__row">
                   <th class="table_heading">5 LAST DEPOSIT</th>
@@ -357,6 +358,14 @@
       </section>
     </main>
     <script src="./index.js"></script>
-    
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+    integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script>
+    new WOW().init();
+  </script>
   </body>
 </html>

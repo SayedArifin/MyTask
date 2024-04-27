@@ -60,7 +60,6 @@ body {
   background-image: url("./assets/futuristic-casino-architecture 1.png");
   background-repeat: no-repeat;
   background-size: cover;
-  overflow-x: hidden;
 }
 .hero {
   display: flex;
@@ -254,6 +253,7 @@ body {
   height: 100%;
   align-items: center;
 }
+
 .navbar-item {
   margin: 0.4em;
   width: 100%;
@@ -275,7 +275,7 @@ body {
   border-bottom: 3px solid var(--transparent);
   color: var(--c1);
   text-shadow: 0 4px 20px var(--c3);
-  transition: 0.5s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .navbar-link:is(:focus, :hover) {
@@ -381,7 +381,13 @@ td {
 }
 .counter {
   color: var(--c13);
-  font-size: 4rem;
+  font-size: 80px;
+  position: absolute;
+  left: 20%;
+  letter-spacing: 27px;
+}
+.jackpot_counter {
+  display: flex;
 }
 .main {
   padding-top: 120px;
@@ -420,6 +426,7 @@ td {
   }
   .tables {
     flex-direction: column;
+    overflow-x: scroll;
   }
   .table_data {
     font-size: 9px;
@@ -436,6 +443,7 @@ td {
     justify-content: center;
     align-items: center;
     justify-self: center;
+    line-height: 45px;
     text-align: center;
   }
   .navbar-logo {
@@ -569,10 +577,6 @@ td {
   margin: auto;
 }
 
-/* .section_2 {
-  margin: 50px 0;
-} */
-
 .bank__support__heading {
   z-index: 5;
   margin-top: -140px;
@@ -614,12 +618,19 @@ td {
 .table {
   color: #00fff0;
   flex: 1;
+  border: 4px solid;
+  padding: 5px;
+  border-image-source: url("./assets/table border.png");
+  border-image-slice: 27 27 27 27;
+  border-image-width: 20px 20px 20px 20px;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: stretch stretch;
 }
 
 .table__section {
   display: flex;
   flex: 1;
-  border: 2px dotted var(--c1);
+  border: 2px solid var(--c16);
 }
 .tables {
   display: flex;
@@ -639,9 +650,7 @@ tr {
   color: var(--c1);
   display: flex;
 }
-.table__section {
-  border: 10px dotted var(--c16);
-}
+
 .table__row {
   display: flex;
   justify-content: center;
@@ -673,4 +682,236 @@ h1 {
 
 .heading {
   margin: 50px 0;
+}
+.border__heading {
+  width: 100%;
+}
+
+.tables {
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+  .game_game__card__heading {
+    font-size: 35px;
+    margin-top: -80px;
+  }
+}
+
+/* Styles for screens with a width greater than or equal to 1400px */
+
+/* Styles for screens with a width between 1400px and 1351px */
+@media only screen and (max-width: 1399px) and (min-width: 1351px) {
+  .counter {
+    margin-left: -40px;
+  }
+}
+
+/* Styles for screens with a width between 1350px and 1301px */
+@media only screen and (max-width: 1350px) and (min-width: 1301px) {
+  /* Add your styles here */
+  .counter {
+    margin-left: -60px;
+  }
+}
+
+/* Styles for screens with a width between 1300px and 1251px */
+@media only screen and (max-width: 1300px) and (min-width: 1251px) {
+  /* Add your styles here */
+  .counter {
+    margin-left: -70px;
+    font-size: 80px;
+  }
+}
+
+/* Styles for screens with a width between 1250px and 1201px */
+@media only screen and (max-width: 1250px) and (min-width: 1201px) {
+  /* Add your styles here */
+  .navbar-logo {
+    width: 160px;
+    height: 90px;
+  }
+  .counter {
+    margin-left: -80px;
+    font-size: 70px;
+  }
+}
+@media only screen and (max-width: 1200px) and (min-width: 1151px) {
+  /* Add your styles here */
+  .counter {
+    margin-left: -80px;
+    font-size: 70px;
+  }
+}
+@media only screen and (max-width: 1150px) and (min-width: 1101px) {
+  /* Add your styles here */
+  .counter {
+    margin-left: -87px;
+    font-size: 65px;
+  }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 1051px) {
+  /* Add your styles here */
+  .counter {
+    margin-left: -70px;
+    letter-spacing: 20px;
+    font-size: 65px;
+  }
+}
+@media only screen and (max-width: 1050px) and (min-width: 1001px) {
+  /* Add your styles here */
+  .counter {
+    margin-left: -70px;
+    letter-spacing: 22px;
+    font-size: 55px;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 951px) {
+  /* Styles for screens with a width between 1000px and 951px */
+  .counter {
+    margin-left: -70px;
+    letter-spacing: 20px;
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 950px) and (min-width: 920px) {
+  /* Styles for screens with a width between 950px and 901px */
+  .counter {
+    margin-left: -65px;
+    letter-spacing: 17px;
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 919px) and (min-width: 906px) {
+  /* Styles for screens with a width between 950px and 901px */
+  .counter {
+    margin-left: 23px;
+    letter-spacing: 31px;
+    font-size: 69px;
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 851px) {
+  /* Styles for screens with a width between 900px and 851px */
+  .counter {
+    font-size: 70px;
+    letter-spacing: 31px;
+  }
+}
+
+@media only screen and (max-width: 850px) and (min-width: 801px) {
+  /* Styles for screens with a width between 850px and 801px */
+  .counter {
+    font-size: 70px;
+    letter-spacing: 26px;
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 751px) {
+  /* Styles for screens with a width between 800px and 751px */
+  .counter {
+    font-size: 61px;
+    letter-spacing: 26px;
+  }
+}
+
+@media only screen and (max-width: 750px) and (min-width: 701px) {
+  /* Styles for screens with a width between 750px and 701px */
+  .counter {
+    font-size: 57px;
+    letter-spacing: 24px;
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 651px) {
+  /* Styles for screens with a width between 700px and 651px */
+  .counter {
+    font-size: 51px;
+    letter-spacing: 24px;
+  }
+}
+
+@media only screen and (max-width: 650px) and (min-width: 601px) {
+  /* Styles for screens with a width between 650px and 601px */
+  .counter {
+    font-size: 51px;
+    letter-spacing: 21px;
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 551px) {
+  /* Styles for screens with a width between 600px and 551px */
+  .counter {
+    margin-left: 5px;
+    font-size: 44px;
+    letter-spacing: 17px;
+  }
+}
+
+@media only screen and (max-width: 550px) and (min-width: 501px) {
+  /* Styles for screens with a width between 550px and 501px */
+  .counter {
+    margin-left: 7px;
+    font-size: 40px;
+    letter-spacing: 15px;
+  }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 451px) {
+  /* Styles for screens with a width between 500px and 451px */
+  .counter {
+    margin-left: 7px;
+    font-size: 36px;
+    letter-spacing: 15px;
+  }
+}
+
+@media only screen and (max-width: 450px) and (min-width: 401px) {
+  /* Styles for screens with a width between 450px and 401px */
+  .counter {
+    margin-left: 7px;
+    font-size: 31px;
+    letter-spacing: 14px;
+  }
+}
+
+@media only screen and (max-width: 400px) and (min-width: 351px) {
+  /* Styles for screens with a width between 400px and 351px */
+  .counter {
+    margin-left: 7px;
+    font-size: 27px;
+    letter-spacing: 12px;
+  }
+}
+
+@media only screen and (max-width: 350px) and (min-width: 301px) {
+  /* Styles for screens with a width between 350px and 301px */
+  .counter {
+    margin-left: 7px;
+    font-size: 22px;
+    letter-spacing: 13px;
+  }
+}
+
+/* Continue adding similar media queries for other specific widths */
+
+/* Styles for screens with a width less than or equal to 300px */
+@media only screen and (max-width: 300px) {
+  .counter {
+    margin-left: 7px;
+    font-size: 18px;
+    letter-spacing: 13px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .table__row {
+    width: auto;
+  }
+  .tabele_data {
+    font-size: 5px;
+  }
 }

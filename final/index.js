@@ -61,7 +61,7 @@ function animateCounter(element, start, end, duration) {
     element.textContent = current.toString().padStart(8, "0");
 
     if ((increment > 0 && current < end) || (increment < 0 && current > end)) {
-      setTimeout(updateCounter, 100); // Delay for each count (1 second)
+      setTimeout(updateCounter, 50); // Delay for each count (1 second)
     }
   }
 
