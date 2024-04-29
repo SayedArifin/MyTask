@@ -49,15 +49,11 @@
     </header>
     <main class="container main">
       <section class="section__1">
-        <p class="mobile_marketting">
-          INFO BANK: BCA (ONLINE), MANDIRI (PERGANTIAN REKENING), BRI (ONLINE),
-          BNI (ONLINE), DANAMON (GANGGUAN)
-        </p>
         <div class="marketing">
           <img class="marketing__image" src="./assets/mike.png" alt="mike" />
 
-          <div class="text headline-container mobile_hidden">
-            <p class="marketing__text headline mobile_hidden">
+          <div class="text headline-container">
+            <p class="marketing__text headline">
               INFO BANK: BCA (ONLINE), MANDIRI (PERGANTIAN REKENING), BRI
               (ONLINE), BNI (ONLINE), DANAMON (GANGGUAN)
             </p>
@@ -74,13 +70,13 @@
                   </div>
                   <div class="swiper-slide">
                     <img class="img" src="./assets/cashback image.png" alt="">
-                  </div>
+                  </div>         
                     </div>
                   </div>
-                  <div class="jackpot_counter">
-                    <img class="img" src="./assets/Group 72.png" alt="">
-                    <div class="counter" id="counter">00000000</div>
-                  </div>
+                  <div class="jackpot_container">
+  <img src="./assets/Group 72.png" alt="Snow" style="width:100%;">
+  <div class="centered" id="counter">00000000</div>
+</div>
                 </section>
           </div>
           <div class="right_container wow fadeInRight">
@@ -102,7 +98,7 @@
                 <p class="branding_text">DOWNLOAD OUR ANDROID APP</p>
                 <img src="./assets//3.svg" alt="android" />
               </div>
-              <button class="branding__button">DOWNLOAD NOW</button>
+              <button type="button" onclick="openPopup()" class="branding__button">DOWNLOAD NOW</button>
               <div class="social_butttons">
                 <button class="social_button">
                   <img src="assets/4.svg" alt="whatsapp" />
@@ -123,18 +119,18 @@
       </section>
       <section class="section_2">
         <div class="game_game__card_container">
-          <div class="heading">
+          <div class="heading container__heading">
             <img
               src="./assets/heading.png"
               alt=""
               class="border__heading mobile_hidden"
             />
-            <h1 class="game_game__card__heading">
+            <h1 class="game_game__card__heading centered_heading">
               10 PERMAINAN PKV GAMES TERLENGKAP
             </h1>
           </div>
 
-          <div class="game_cards  wow bounceInUp">
+          <div class="game_cards  wow fadeInUp">
             <div class="game__card">
               <div class="card">
                 <img
@@ -266,7 +262,7 @@
               <h1 class="bank__support__heading">BANK SUPPORT</h1>
             </div>
 
-            <p class="support__description wow bounceInUp">
+            <p class="support__description wow fadeInUp">
               AhliQQ memberikan anda kemudahan dalam melakukan transaksi deposit
               dan withdraw. Kami menyediakan bank BCA, bank BNI, bank BRI, bank
               MANDIRI, bank DANAMON, dan bank CIMB NIAGA. Namun, jangan khawatir
@@ -283,7 +279,7 @@
               alt="cards"
             />
           </div>
-          <div class="tables wow bounceInUp">
+          <div class="tables wow fadeInUp">
             <div class="table ">
               <table class="table__section">
                 <tr class="table__row">
@@ -353,6 +349,30 @@
       </section>
       
       </section>
+      <section>
+       
+
+        <div class="popup" id="popup">
+   
+    <div class="popup-image-container">
+    <img class="popup-img" id="popup-displayed-image" src="https://via.placeholder.com/400?text=Image+1" alt="Displayed Image">
+</div>
+
+<div class="popup-button-container">
+    <button class="popup-button" onclick="changeImage(0)"><img width="50px" src="" alt=""></button>
+    <button class="popup-button" onclick="changeImage(1)"><img width="50px" src="" alt=""></button>
+    <button class="popup-button" onclick="changeImage(2)"><img width="50px" src="" alt=""></button>
+    <button class="popup-button" onclick="changeImage(3)"><img width="50px" src="" alt=""></button>
+    <button class="popup-button" onclick="changeImage(4)"><img width="50px" src="" alt=""></button>
+</div>
+<div class="close_popup">
+   <span class="close-btn" onclick="closePopup()">X</span>
+</div>
+
+</div>
+
+
+      </section>
     </main>
     <script src="./index.js"></script>
     <script
@@ -363,6 +383,33 @@
   ></script>
   <script>
     new WOW().init();
+  </script>
+  <script>
+  var images = [
+  "https://via.placeholder.com/400?text=Image+1",
+  "https://via.placeholder.com/400?text=Image+2",
+  "https://via.placeholder.com/400?text=Image+3",
+  "https://via.placeholder.com/400?text=Image+4",
+  "https://via.placeholder.com/400?text=Image+5",
+];
+
+function changeImage(index) {
+  var popupImageElement = document.getElementById("popup-displayed-image");
+  var popupButtons = document.querySelectorAll(".popup-button img");
+  popupButtons.forEach(function(button) {
+    button.classList.remove("active");
+  });
+  popupButtons[index].classList.add("active");
+  popupButtons.forEach(function(button, i) {
+    button.src = images[i];
+  });
+
+  popupImageElement.src = images[index];
+}
+
+changeImage(0);
+
+
   </script>
   </body>
 </html>

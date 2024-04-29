@@ -52,16 +52,18 @@ const swiper = new Swiper(".swiper", {
 });
 
 function animateCounter(element, start, end, duration) {
-  let range = end - start;
-  let current = start;
-  let increment = end > start ? 1 : -1;
+  let current = start.toString().padStart(8, "0");
+  let final = end.toString().padStart(8, "0");
 
   function updateCounter() {
-    current += increment;
-    element.textContent = current.toString().padStart(8, "0");
+    let newStr = "";
+    for (let i = 0; i < current.length; i++) {
+      newStr += Math.floor(Math.random() * 10); // Random digit
+    }
+    element.textContent = newStr;
 
-    if ((increment > 0 && current < end) || (increment < 0 && current > end)) {
-      setTimeout(updateCounter, 50); // Delay for each count (1 second)
+    if (newStr !== final) {
+      setTimeout(updateCounter, Math.random() * 150); // Random delay between 0 and 500 milliseconds
     }
   }
 
@@ -115,3 +117,13 @@ function showToast(message) {
 window.onload = function () {
   setTimeout(startJackpot, 3000); // 3000 milliseconds = 3 seconds
 };
+
+function openPopup() {
+  document.getElementById("popup").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
+}
