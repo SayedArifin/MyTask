@@ -3,7 +3,7 @@
   --c1: #fee3ff;
   --c2: #ffe947;
   --c3: #fb20ff;
-  --c4: #000000;
+  --c4: #0d0a0f;
   --c5: #353535;
   --c6: #802f81;
   --c7: #fde542;
@@ -59,7 +59,7 @@
 body {
   font-family: "Saira-Black", sans-serif;
   background-color: var(--c4);
-  background-image: url("./assets/image (4).png");
+  background-image: url("./assets/final bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -570,6 +570,7 @@ td {
   color: #ffdef8;
   cursor: pointer;
   transition: transform 0.3s ease;
+  font-family: "Saira-Black", sans-serif;
 }
 .card_button:hover {
   transform: scale(1.1);
@@ -673,9 +674,9 @@ tr {
 .table_heading {
   font-size: 200%;
   -webkit-text-stroke: 2px var(--c10);
-  text-stroke: 2px var(--c10);
+  text-stroke: 1px var(--c10);
   color: var(--c16);
-  text-shadow: 0 8px 40px var(--c16);
+  text-shadow: 0 8px 40px #f400f9;
   letter-spacing: -2px;
 }
 
@@ -808,9 +809,9 @@ h1 {
 
 .close-btn {
   position: absolute;
-  font-size: 20px;
-  top: 10px;
-  right: 10px;
+  font-size: 25px;
+  top: 0;
+  right: 7px;
   cursor: pointer;
 }
 
