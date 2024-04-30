@@ -436,7 +436,7 @@ td {
     overflow-x: scroll;
   }
   .table_data {
-    font-size: 9px;
+    font-size: 50%;
   }
   .mobile_hidden {
     display: none;
@@ -678,6 +678,7 @@ tr {
   color: var(--c16);
   text-shadow: 0 0 80px var(--c16);
   letter-spacing: -2px;
+  line-height: 30px;
 }
 
 .money {
@@ -701,17 +702,31 @@ h1 {
 
 @media screen and (max-width: 1200px) {
   .game_game__card__heading {
-    font-size: 35px;
+    font-size: 4vw;
     margin-top: -76px;
   }
 }
-
+@media screen and (max-width: 750px) {
+  .game_game__card__heading {
+    font-size: 29px;
+    margin-top: -50px;
+  }
+  .support__description {
+    text-align: justify;
+  }
+}
 @media only screen and (max-width: 450px) {
   .table__row {
     width: 100%;
   }
   .tabele_data {
     font-size: 5px;
+  }
+  .table_heading {
+    font-size: 150%;
+  }
+  .support__description {
+    font-size: 4vw;
   }
 }
 
@@ -751,7 +766,7 @@ h1 {
   /* Your CSS styles for this range */
   .centered {
     font-size: 5vw;
-    letter-spacing: 2.5vw;
+    letter-spacing: 2.3vw;
   }
 }
 
@@ -760,7 +775,7 @@ h1 {
     font-size: 5vw;
   }
   .table__row {
-    min-width: 300px;
+    min-width: 255px;
   }
 
   .table {
@@ -794,17 +809,19 @@ h1 {
   border: 2px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 9999;
+  width: 90%;
+  max-width: 600px;
 }
 
 .overlay {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.744);
   z-index: 999;
+  display: none;
 }
 
 .close-btn {
@@ -848,5 +865,16 @@ h1 {
 @media screen and (min-width: 1010px) and (max-width: 1200px) {
   .game_game__card__heading {
     margin-top: -85px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .marketing {
+    width: 100%;
+    margin-top: -36px;
+    margin-bottom: -40px;
+  }
+  .marketing__image {
+    width: 60px;
+    height: 60px;
   }
 }

@@ -50,20 +50,16 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-scrollbar",
   },
 });
-
 function animateCounter(element, start, end, duration) {
-  let current = start.toString().padStart(8, "0");
-  let final = end.toString().padStart(8, "0");
+  let current = start;
+  let final = end;
 
   function updateCounter() {
-    let newStr = "";
-    for (let i = 0; i < current.length; i++) {
-      newStr += Math.floor(Math.random() * 10); // Random digit
-    }
-    element.textContent = newStr;
+    current++; // Increment by 1
+    element.textContent = current;
 
-    if (newStr !== final) {
-      setTimeout(updateCounter, Math.random() * 150); // Random delay between 0 and 500 milliseconds
+    if (current < final) {
+      setTimeout(updateCounter, 30); // Adjust the delay as needed for speed
     }
   }
 
@@ -115,7 +111,7 @@ function showToast(message) {
 }
 
 window.onload = function () {
-  setTimeout(startJackpot, 3000); // 3000 milliseconds = 3 seconds
+  setTimeout(startJackpot, 3000);
 };
 
 function openPopup() {
@@ -126,4 +122,8 @@ function openPopup() {
 function closePopup() {
   document.getElementById("popup").style.display = "none";
   document.getElementById("overlay").style.display = "none";
+  console.log("clicked");
 }
+
+// Add event listener to close popup when overlay is clicked
+document.getElementById("overlay").addEventListener("click", closePopup);
